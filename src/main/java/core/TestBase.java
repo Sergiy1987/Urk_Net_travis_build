@@ -10,14 +10,6 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
@@ -38,17 +30,6 @@ public class TestBase {
     */
     private static WebDriver webDriver;
     private String browser = System.getProperty("selenide.browser", System.getProperty("browser", WebDriverRunner.CHROME));
-
-    public static void takeScreenShoot() throws AWTException, IOException {
-        Robot robot = new Robot();
-        robot.mouseMove(0, 0);
-
-        Screenshot screenshot = new AShot()
-                .shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(webDriver);
-        File actualFile = new File("" + ".png");
-        ImageIO.write(screenshot.getImage(), "png", actualFile);
-
-    }
 
     /*
     In Selenide 4.7 and later you can comit a setup a driver via xxxDriverManager.getInstance().setup();
