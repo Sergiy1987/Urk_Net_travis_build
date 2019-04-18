@@ -5,10 +5,10 @@
         <classes>
 
             <class name="TestLogin">
-                <!--         <methods>
+                <methods>
                              <include name="liveLoginTest"/>
 
-                         </methods>-->
+                </methods>
             </class>
 
             <class name="TestSearch">
