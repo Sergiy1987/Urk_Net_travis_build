@@ -11,6 +11,13 @@
                 </methods>
             </class>
 
+            <class name="TestSearch">
+                <methods>
+                    <include name="searchByEmail"/>
+
+                </methods>
+            </class>
+
         </classes>
     </test>
 </suite>
