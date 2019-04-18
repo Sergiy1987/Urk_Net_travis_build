@@ -63,7 +63,7 @@
     <repositories>
         <repository>
             <id>route4me-automated-testing-mvn-repo</id>
-            <url>https://raw.github.com/route4me/route4me-automated-testing/mvn-repo/</url>
+            <url>http://central.maven.org/maven2/</url>
             <snapshots>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
