@@ -44,7 +44,6 @@ install: mvn test
 #  - "java -jar selenium-server-standalone-2.53.1.jar > /dev/null 2>/dev/null &"
 
   - stages:
-
       - stage: Production Autotests Part1
         if: branch = master AND type = push
     - stage: Production Autotests Part2
@@ -57,7 +56,7 @@ install: mvn test
             install: ./install_unit_tests_dependencies
             script: ./run_unit_tests
             after_success: ./upload_coverage
-          
+
           - stage: Production Autotests Part1
           env: TARGET=target_environment
           install: ./install_unit_tests_dependencies
