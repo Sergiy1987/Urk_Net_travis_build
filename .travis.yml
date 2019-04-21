@@ -69,15 +69,14 @@ stages:
   - Autotests Part2
 
 
-jobs:
-include:
-  - stages:
-  - stage: Autotests Part1
-    name: part1
-    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
-  - stage: Autotests Part2
-    name: part2
-    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+#jobs:
+#include:
+#  - stage: Autotests Part1
+#    name: part1
+#    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+#  - stage: Autotests Part2
+#    name: part2
+#    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 
 notifications:
   email:
