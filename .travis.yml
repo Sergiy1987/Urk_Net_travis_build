@@ -71,14 +71,6 @@ include:
     script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
   - stage: Production Autotests Part2
     script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
-  - stage: deploy
-    env: TEST_CATEGORY=none
-    install: skip # bundle install is not required
-   
-
-
-
-
 
 notifications:
   email:
