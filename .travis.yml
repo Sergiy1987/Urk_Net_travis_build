@@ -58,7 +58,7 @@ matrix:
   fast_finish: true
 
 script:
-  - if [ $TEST_CATEGORY == 'test' ]; then npm test; fi
+  - if [ $TEST_CATEGORY == 'test' ]; then mvn test; fi
   - if [ $TEST_CATEGORY == 'test1' ]; then bundle exec parallel_rspec -n 2 spec; fi
 
   #-stages:
