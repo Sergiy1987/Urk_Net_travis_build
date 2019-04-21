@@ -54,16 +54,15 @@ env:
     - TEST_CATEGORY=one
     - TEST_CATEGORY=two
 
-
   #matrix:
   # fast_finish: true
 stages:
-  - name: Autotests Part1
-  - name: Autotests Part2
+  - Autotests Part1
+  - Autotests Part2
+  -
 #stages:
 #  - Autotests Part1
 #  - Autotests Part2
-
 
 jobs:
 include:
