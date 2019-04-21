@@ -43,11 +43,26 @@ install: mvn test
 #  - "wget http://central.maven.org/maven2/ru/yandex/qatools/allure/allure-testng-adaptor/1.5.0/allure-testng-adaptor-1.5.0.jar"
 #  - "java -jar selenium-server-standalone-2.53.1.jar > /dev/null 2>/dev/null &"
 
-jobs:
-  include:
-    - stage: Production Autotests Part1
-      script: test -v test/
+  - stages:
+
+      - stage: Production Autotests Part1
+        if: branch = master AND type = push
     - stage: Production Autotests Part2
+      if: branch = Develop AND type = push
+
+      jobs:
+        include:
+          - stage: Production Autotests Part1
+            env: TARGET=target_environment
+            install: ./install_unit_tests_dependencies
+            script: ./run_unit_tests
+            after_success: ./upload_coverage
+          
+          - stage: Production Autotests Part1
+          env: TARGET=target_environment
+          install: ./install_unit_tests_dependencies
+          script: ./run_unit_tests
+          after_success: ./upload_coverage
 
 
 notifications:
