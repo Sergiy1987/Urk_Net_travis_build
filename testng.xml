@@ -6,11 +6,15 @@
 
             <class name="TestLogin">
                 <methods>
-                             <include name="liveLoginTest"/>
+                    <include name="TestLogin"/>
 
                 </methods>
             </class>
-
+            <class name="TestSearch">
+                <methods>
+                    <exclude name="searchByEmail"/>
+                </methods>
+            </class>
 
         </classes>
     </test>
