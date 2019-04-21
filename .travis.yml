@@ -57,9 +57,9 @@ env:
 matrix:
   fast_finish: true
 
-script:
-  - if [ $TEST_CATEGORY == 'test' ]; then mvn test -Dsurefire.suiteXmlFiles=testng.xml; fi
-  - if [ $TEST_CATEGORY == 'test1' ]; then mvn test -Dsurefire.suiteXmlFiles=testng1.xml; fi
+  #script:
+  #  - if [ $TEST_CATEGORY == 'test' ]; then mvn test -Dsurefire.suiteXmlFiles=testng.xml; fi
+  # - if [ $TEST_CATEGORY == 'test1' ]; then mvn test -Dsurefire.suiteXmlFiles=testng1.xml; fi
 
   #-stages:
   # - stage: Production Autotests Part1
@@ -70,10 +70,10 @@ script:
 jobs:
 include:
   - stage: Production Autotests Part1
-  #env: TARGET=target_environment
-
+    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
   - stage: Production Autotests Part2
-#env: TARGET=target_environment
+    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+
 
 
 
