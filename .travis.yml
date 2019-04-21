@@ -46,18 +46,17 @@ install: mvn test
 
 -stages:
   - stage: Production Autotests Part1
-  if: branch = master AND type = push
+  # if: branch = master AND type = push
   - stage: Production Autotests Part2
-  if: branch = Develop AND type = push
+  # if: branch = Develop AND type = push
 
-  #jobs:
-  #        include:
-  #         - stage: Production Autotests Part1
-  #            env: TARGET=target_environment
+jobs:
+include:
+  - stage: Production Autotests Part1
+  #env: TARGET=target_environment
 
-
-  #          - stage: Production Autotests Part1
-#         env: TARGET=target_environment
+  - stage: Production Autotests Part2
+#env: TARGET=target_environment
 
 
 
