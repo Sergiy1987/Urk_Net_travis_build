@@ -56,7 +56,7 @@ before_install:
   env:
     - TEST_CATEGORY=one
     - TEST_CATEGORY=two
-script: bundle exec rake test:$TEST_CATEGORY
+
 
   #matrix:
   # fast_finish: true
