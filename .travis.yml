@@ -1,6 +1,7 @@
 branches:
   only:
     - master
+    - Develop
 
 language: java
 jdk:
