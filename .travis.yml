@@ -46,7 +46,7 @@ install: mvn test
 jobs:
   include:
     - stage: Production Autotests Part1
-
+      script: travis_wait 30 tox -- -v -m e2e_email_processing --headless=true --browser=chrome --host=prod --browser_type=web moniroting/
     - stage: Production Autotests Part2
 
 
