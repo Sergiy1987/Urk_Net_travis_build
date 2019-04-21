@@ -69,9 +69,9 @@ cache:
   # if: branch = master AND type = push
   #  - stage: Production Autotests Part2
   # if: branch = Develop AND type = push
-stages:
-  - name: Production Autotests Part1
-  - name: Production Autotests Part2
+  #stages:
+  # - name: Production Autotests Part1
+  # - name: Production Autotests Part2
 
 jobs:
 include:
