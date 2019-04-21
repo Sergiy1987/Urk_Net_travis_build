@@ -44,6 +44,23 @@ install: mvn test
 #  - "wget http://central.maven.org/maven2/ru/yandex/qatools/allure/allure-testng-adaptor/1.5.0/allure-testng-adaptor-1.5.0.jar"
 #  - "java -jar selenium-server-standalone-2.53.1.jar > /dev/null 2>/dev/null &"
 
+cache:
+  bundler: true
+
+env:
+  global:
+    - RAILS_ENV=test
+  matrix:
+    - TEST_CATEGORY=frontend
+    - TEST_CATEGORY=backend
+
+matrix:
+  fast_finish: true
+
+script:
+  - if [ $TEST_CATEGORY == 'frontend' ]; then npm test; fi
+  - if [ $TEST_CATEGORY == 'backend' ]; then bundle exec parallel_rspec -n 2 spec; fi
+
 -stages:
   - stage: Production Autotests Part1
   # if: branch = master AND type = push
@@ -57,6 +74,7 @@ include:
 
   - stage: Production Autotests Part2
 #env: TARGET=target_environment
+
 
 
 
