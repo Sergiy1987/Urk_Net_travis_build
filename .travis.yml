@@ -47,12 +47,12 @@ before_install:
 cache:
   bundler: true
 
-env:
-  global:
-    - JAVA_ENV=test
-  matrix:
-    - TEST_CATEGORY=test
-    - TEST_CATEGORY=test1
+  #env:
+  #  global:
+  #    - JAVA_ENV=test
+  # matrix:
+#    - TEST_CATEGORY=test
+#    - TEST_CATEGORY=test1
 
 matrix:
   fast_finish: true
@@ -66,6 +66,9 @@ matrix:
   # if: branch = master AND type = push
   #  - stage: Production Autotests Part2
   # if: branch = Develop AND type = push
+stages:
+  - Production Autotests Part1
+  - Production Autotests Part2
 
 jobs:
 include:
