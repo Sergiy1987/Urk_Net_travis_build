@@ -54,15 +54,11 @@ jobs:
         include:
           - stage: Production Autotests Part1
             env: TARGET=target_environment
-            install: ./install_unit_tests_dependencies
-            script: ./run_unit_tests
-            after_success: ./upload_coverage
+
 
           - stage: Production Autotests Part1
           env: TARGET=target_environment
-          install: ./install_unit_tests_dependencies
-          script: ./run_unit_tests
-          after_success: ./upload_coverage
+
 
 
 notifications:
