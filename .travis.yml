@@ -43,9 +43,6 @@ before_install:
 #  - "wget http://central.maven.org/maven2/ru/yandex/qatools/allure/allure-testng-adaptor/1.5.0/allure-testng-adaptor-1.5.0.jar"
 #  - "java -jar selenium-server-standalone-2.53.1.jar > /dev/null 2>/dev/null &"
 
-cache:
-bundler: true
-
   #env:
   #  global:
   #    - JAVA_ENV=test
@@ -63,17 +60,17 @@ bundler: true
   #  stages:
   #   - name: Production Autotests Part1
   #   - name: Production Autotests Part2
-stages:
-  - Autotests Part1
-  - Autotests Part2
+#stages:
+#  - Autotests Part1
+#  - Autotests Part2
 
 
-jobs:
-include:
-  - stage: Autotests Part1
-  script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
-    - stage: Autotests Part2
-  script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+#jobs:
+#include:
+#  - stage: Autotests Part1
+#  script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+#    - stage: Autotests Part2
+#  script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 
 notifications:
   email:
