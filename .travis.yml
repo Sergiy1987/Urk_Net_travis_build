@@ -49,22 +49,22 @@ cache:
 
 env:
   global:
-    - RAILS_ENV=test
+    - JAVA_ENV=test
   matrix:
-    - TEST_CATEGORY=frontend
-    - TEST_CATEGORY=backend
+    - TEST_CATEGORY=test
+    - TEST_CATEGORY=test1
 
 matrix:
   fast_finish: true
 
 script:
-  - if [ $TEST_CATEGORY == 'frontend' ]; then npm test; fi
-  - if [ $TEST_CATEGORY == 'backend' ]; then bundle exec parallel_rspec -n 2 spec; fi
+  - if [ $TEST_CATEGORY == 'test' ]; then npm test; fi
+  - if [ $TEST_CATEGORY == 'test1' ]; then bundle exec parallel_rspec -n 2 spec; fi
 
--stages:
-  - stage: Production Autotests Part1
+  #-stages:
+  # - stage: Production Autotests Part1
   # if: branch = master AND type = push
-  - stage: Production Autotests Part2
+  #  - stage: Production Autotests Part2
   # if: branch = Develop AND type = push
 
 jobs:
