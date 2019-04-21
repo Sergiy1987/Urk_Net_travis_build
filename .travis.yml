@@ -53,22 +53,14 @@ before_install:
   # matrix:
 #    - TEST_CATEGORY=test
 #    - TEST_CATEGORY=test1
-  #env:
-  # - TEST_CATEGORY=one
-  # - TEST_CATEGORY=two
+  env:
+    - TEST_CATEGORY=one
+    - TEST_CATEGORY=two
+script: bundle exec rake test:$TEST_CATEGORY
 
   #matrix:
   # fast_finish: true
 
-  #script:
-  #  - if [ $TEST_CATEGORY == 'test' ]; then mvn test -Dsurefire.suiteXmlFiles=testng.xml; fi
-  # - if [ $TEST_CATEGORY == 'test1' ]; then mvn test -Dsurefire.suiteXmlFiles=testng1.xml; fi
-
-  #-stages:
-  # - stage: Production Autotests Part1
-  # if: branch = master AND type = push
-  #  - stage: Production Autotests Part2
-  # if: branch = Develop AND type = push
   #stages:
   # - name: Production Autotests Part1
   # - name: Production Autotests Part2
@@ -76,9 +68,13 @@ before_install:
 jobs:
 include:
   - stage: Production Autotests Part1
-    script: ./testng.xml
+    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
   - stage: Production Autotests Part2
-    script: ./testng1.xml
+    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+  - stage: deploy
+    env: TEST_CATEGORY=none
+    install: skip # bundle install is not required
+   
 
 
 
