@@ -76,9 +76,9 @@ before_install:
 jobs:
 include:
   - stage: Production Autotests Part1
-    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+    script: ./testng.xml
   - stage: Production Autotests Part2
-    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+    script: ./testng1.xml
 
 
 
