@@ -11,12 +11,7 @@
 
                 </methods>
             </class>
-            <class name="TestLogin">
-                <methods>
-                    <exclude name="liveLoginTest"/>
 
-                </methods>
-            </class>
         </classes>
     </test>
 </suite>

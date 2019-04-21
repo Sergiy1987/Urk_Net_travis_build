@@ -51,7 +51,7 @@ before_install:
 #    - TEST_CATEGORY=test1
 cache:
   bundler: true
-  
+
 env:
   - TEST_CATEGORY=one
   - TEST_CATEGORY=two
