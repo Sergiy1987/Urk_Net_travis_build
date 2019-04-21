@@ -52,9 +52,9 @@ bundler: true
   # matrix:
 #    - TEST_CATEGORY=test
 #    - TEST_CATEGORY=test1
-env:
-  - TEST_CATEGORY=one
-  - TEST_CATEGORY=two
+  #env:
+  #  - TEST_CATEGORY=one
+  #  - TEST_CATEGORY=two
 
 
   #matrix:
