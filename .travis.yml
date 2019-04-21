@@ -59,7 +59,7 @@ matrix:
 
 script:
   - if [ $TEST_CATEGORY == 'test' ]; then mvn test -Dsurefire.suiteXmlFiles=testng.xml; fi
-  - if [ $TEST_CATEGORY == 'test' ]; then mvn test -Dsurefire.suiteXmlFiles=testng1.xml; fi
+  - if [ $TEST_CATEGORY == 'test1' ]; then mvn test -Dsurefire.suiteXmlFiles=testng1.xml; fi
 
   #-stages:
   # - stage: Production Autotests Part1
