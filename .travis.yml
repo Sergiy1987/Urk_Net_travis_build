@@ -27,7 +27,7 @@ before_install:
 
 #install: mvn test
 #travis_wait 50 mvn install
-  mvn install
+  #mvn install
 
 
 #before_script:
@@ -49,27 +49,25 @@ before_install:
   # matrix:
 #    - TEST_CATEGORY=test
 #    - TEST_CATEGORY=test1
+cache:
+  bundler: true
+  
 env:
-  matrix:
-    - TEST_CATEGORY=one
-    - TEST_CATEGORY=two
+  - TEST_CATEGORY=one
+  - TEST_CATEGORY=two
 
   #matrix:
   # fast_finish: true
 stages:
-  - Autotests Part1
-  - Autotests Part2
-  -
-#stages:
-#  - Autotests Part1
-#  - Autotests Part2
+  - name: Production Autotests Part1
+  - name: Production Autotests Part2
 
 jobs:
 include:
-  - stage: Autotests Part1
-  script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
-    - stage: Autotests Part2
-  script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+  - stage: Production Autotests Part1
+    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+  - stage: Production Autotests Part2
+    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 
 notifications:
   email:
