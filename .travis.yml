@@ -1,7 +1,6 @@
 branches:
   only:
     - master
-    - Develop
 
 language: java
 jdk:
@@ -28,7 +27,7 @@ before_install:
 
 #install: mvn test
 #travis_wait 50 mvn install
-#mvn install
+  mvn install
 
 
 #before_script:
@@ -53,9 +52,9 @@ before_install:
   # matrix:
 #    - TEST_CATEGORY=test
 #    - TEST_CATEGORY=test1
-  env:
-    - TEST_CATEGORY=one
-    - TEST_CATEGORY=two
+env:
+  - TEST_CATEGORY=one
+  - TEST_CATEGORY=two
 
 
   #matrix:
@@ -69,14 +68,12 @@ stages:
   - Autotests Part2
 
 
-#jobs:
-#include:
-#  - stage: Autotests Part1
-#    name: part1
-#    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
-#  - stage: Autotests Part2
-#    name: part2
-#    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+jobs:
+include:
+  - stage: Autotests Part1
+  script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+    - stage: Autotests Part2
+  script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 
 notifications:
   email:
