@@ -44,8 +44,8 @@ before_install:
 #  - "wget http://central.maven.org/maven2/ru/yandex/qatools/allure/allure-testng-adaptor/1.5.0/allure-testng-adaptor-1.5.0.jar"
 #  - "java -jar selenium-server-standalone-2.53.1.jar > /dev/null 2>/dev/null &"
 
-cache:
-  bundler: true
+  #cache:
+  # bundler: true
 
   #env:
   #  global:
