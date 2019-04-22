@@ -58,17 +58,29 @@ cache:
 
   #matrix:
   # fast_finish: true
+  #stages:
+  # - name: Production Autotests Part1
+#  - name: Production Autotests Part2
+
+#jobs:
+#include:
+#  - stage: Production Autotests Part1
+#    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+#  - stage: Production Autotests Part2
+#    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 stages:
-  - name: Production Autotests Part1
-  - name: Production Autotests Part2
-
+  - compile
+  - test
+  - deploy
+env:
+  - FOO=one
+  - FOO=two
 jobs:
-include:
-  - stage: Production Autotests Part1
-    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
-  - stage: Production Autotests Part2
-    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
-
+  include:
+    - stage: compile
+      script: ./compile
+    - stage: deploy
+      script: ./deploy
 notifications:
   email:
     recipients:
