@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true" name="C:/Users/evgen/IdeaProjects/automation/src/test/java/live/tests">
         <classes>
 
-            <class name="TestLogin">
+            <class name="one.TestLogin">
                 <methods>
                     <include name="liveLoginArrayTest"/>
 

@@ -1,3 +1,5 @@
+package one;
+
 import core.TestBase;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

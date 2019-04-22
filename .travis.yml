@@ -71,16 +71,16 @@ cache:
 stages:
   - compile
   - test
-  - deploy
+#  - deploy
 env:
   - FOO=one
   - FOO=two
 jobs:
   include:
     - stage: compile
-      script: mvn clean test
-    - stage: deploy
-      script: ./deploy
+      script: mvn -Dmaven.test.skip=true package
+#    - stage: deploy
+#      script: ./deploy
 notifications:
   email:
     recipients:
