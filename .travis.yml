@@ -58,9 +58,9 @@ cache:
 
   #matrix:
   # fast_finish: true
-#stages:
-#  - name: Production Autotests Part1
-#  - name: Production Autotests Part2
+stages:
+  - name: Production Autotests Part1
+  - name: Production Autotests Part2
 
 jobs:
 include:
