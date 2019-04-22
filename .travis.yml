@@ -78,7 +78,7 @@ env:
 jobs:
   include:
     - stage: compile
-      script: ./compile
+      script: mvn clean test
     - stage: deploy
       script: ./deploy
 notifications:
