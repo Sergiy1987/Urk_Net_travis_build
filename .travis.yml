@@ -81,9 +81,9 @@ jobs:
     - stage: compile
       script: mvn -Dmaven.test.skip=true package
     - stage: test1
-      script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+      script: ./one #mvn test -Dsurefire.suiteXmlFiles=testng.xml
     - stage: test2
-      script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+      script: ./two # mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 #    - stage: deploy
 #      script: ./deploy
 notifications:
