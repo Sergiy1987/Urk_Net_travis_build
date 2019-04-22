@@ -73,9 +73,9 @@ stages:
   - test1
   - test2
 #  - deploy
-env:
-  - FOO=one
-  - FOO=two
+  #env:
+  # - FOO=one
+  # - FOO=two
 jobs:
   include:
     - stage: compile
