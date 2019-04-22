@@ -70,7 +70,8 @@ cache:
 #    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 stages:
   - compile
-  - test
+  - test1
+  - test2
 #  - deploy
 env:
   - FOO=one
@@ -79,6 +80,10 @@ jobs:
   include:
     - stage: compile
       script: mvn -Dmaven.test.skip=true package
+    - stage: test1
+      script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+    - stage: test2
+      script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 #    - stage: deploy
 #      script: ./deploy
 notifications:
