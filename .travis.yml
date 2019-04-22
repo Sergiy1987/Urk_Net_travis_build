@@ -68,8 +68,9 @@ cache:
 #    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
 #  - stage: Production Autotests Part2
 #    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+script: mvn -Dmaven.test.skip=true package
 stages:
-  - compile
+  # - compile
   - test1
   - test2
 #  - deploy
@@ -81,9 +82,9 @@ jobs:
     # - stage: compile
     #  script: mvn -Dmaven.test.skip=true package
     - stage: test1
-      script: /one #mvn test -Dsurefire.suiteXmlFiles=testng.xml
+      script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
     - stage: test2
-      script: /two # mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+      script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 #    - stage: deploy
 #      script: ./deploy
 notifications:
