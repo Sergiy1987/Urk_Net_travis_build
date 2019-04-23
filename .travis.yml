@@ -5,6 +5,7 @@ branches:
 language: java
 jdk:
   - oraclejdk8
+  - openjdk8
 
 sudo: required
 dist: trusty
@@ -14,9 +15,6 @@ dist: trusty
 
 addons:
   chrome: stable
-  apt:
-    packages:
-      - oracle-java8-installer
 
 before_install:
   - export DISPLAY=:99.0
@@ -71,7 +69,7 @@ cache:
 #    script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
 #  - stage: Production Autotests Part2
 #    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
-script: mvn -Dmaven.test.skip=true package
+script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 stages:
   # - compile
   - test1
