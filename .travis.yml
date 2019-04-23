@@ -78,13 +78,16 @@ script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   #env:
   # - FOO=one
   # - FOO=two
+stages:
+  - Tests
+
 jobs:
   include:
     # - stage: compile
     #  script: mvn -Dmaven.test.skip=true package
-    - stage: test1
+    - stage: Tests
       script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
-    - stage: test2
+    - #stage: test2
       script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 #    - stage: deploy
 #      script: ./deploy
