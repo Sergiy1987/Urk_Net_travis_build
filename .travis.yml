@@ -5,7 +5,7 @@ branches:
 language: java
 jdk:
   - oraclejdk8
-  - openjdk8
+
 
 sudo: required
 dist: trusty
@@ -70,10 +70,10 @@ cache:
 #  - stage: Production Autotests Part2
 #    script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
 script: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-stages:
+  #stages:
   # - compile
-  - test1
-  - test2
+  #  - test1
+  #  - test2
 #  - deploy
   #env:
   # - FOO=one
