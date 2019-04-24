@@ -14,7 +14,8 @@
         <allure.version>1.5.0</allure.version>
         <aspectj.version>1.8.10</aspectj.version>
         <suiteXmlFile>testng.xml</suiteXmlFile>
-        <suiteXmlFile>testng1.xml</suiteXmlFile>
+
+        <testng.testnames>*Test</testng.testnames>
     </properties>
 
 
@@ -34,6 +35,13 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+                    <properties>
+                        <property>
+                            <name>testnames</name>
+                            <value>${testng.testnames}</value>
+                        </property>
+                    </properties>
+
                 </configuration>
                 <dependencies>
                     <dependency>

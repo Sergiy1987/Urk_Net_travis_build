@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Suite Part1">
-    <test verbose="2" preserve-order="true" name="C:/Users/evgen/IdeaProjects/automation/src/test/java/live/tests">
-        <classes>
 
+<suite name="Test Suite Part1">
+    <test name="TestLogin" preserve-order="true">
+        <classes>
             <class name="one.TestLogin">
                 <methods>
                     <include name="liveLoginArrayTest"/>
 
                 </methods>
             </class>
-
-
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="TestSearch">
+        <classes>
+            <class name="two.TestSearch">
+                <methods>
+                    <include name="searchByEmail"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

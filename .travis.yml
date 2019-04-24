@@ -86,9 +86,10 @@ jobs:
     # - stage: compile
     #  script: mvn -Dmaven.test.skip=true package
     - stage: Tests
-      script: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+      script: mvn test -Dtestng.testnames=TestLogin
     - #stage: test2
-      script: mvn test -Dsurefire.suiteXmlFiles=testng1.xml
+      script: mvn test -Dtestng.testnames=TestSearch
+
 #    - stage: deploy
 #      script: ./deploy
 notifications:
