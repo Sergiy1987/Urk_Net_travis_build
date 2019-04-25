@@ -19,9 +19,9 @@ addons:
 before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  - Xvfb $DISPLAY -screen 0 1024x768x16 &
-  - fluxbox &
-  - x11vnc -display $DISPLAY -bg -forever -nopw -quiet -listen localhost -xkb
+  - Xvfb $DISPLAY -screen 99 1024x768x16 &
+  fluxbox &
+  x11vnc -display $DISPLAY -bg -forever -nopw -quiet -listen localhost -xkb
   - sleep 20
   - sudo apt-get update
   - sudo apt-get install -y libappindicator1 fonts-liberation
